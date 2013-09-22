@@ -1,0 +1,21 @@
+{
+	"name": "bm-w",
+	"author": "Bastiaan Marinus van de Weerd <bastiaan@bm-w.eu>",
+	"description": "My personal GitHub Page",
+	"version": "0.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bm-w/bm-w.github.io"
+	},
+	"devDependencies": {
+		"jade": ">= 0.35.0",
+		"stylus": ">= 0.37.0",
+		"coffee-script": ">= 1.6.3",
+		"uglify-js": ">= 2.4.0",
+		"http-server": ">= 0.5.5",
+		"nodemon": ">= 0.7.10"
+	},
+	"scripts": {
+		"install": "make build -f ./Makefile"
+	}
+}
