@@ -55,6 +55,7 @@ $(DIR)/:
 $(PUB_DIR)/: $(DIR)
 	mkdir -p $(PUB_DIR)/lib
 	curl -s http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css -o $(PUB_DIR)/lib/reset.css
+	curl -s http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js  -o $(PUB_DIR)/lib/angular.js
 
 # ---
 
