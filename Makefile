@@ -44,8 +44,8 @@ release: build
 	rm -rf $(TOP_DIR)/index.html $(TOP_DIR)/public
 	git checkout master
 	cp -r $(BLD_DIR)/* $(TOP_DIR)/ && rm -r $(BLD_DIR)
-	git add -u
-	@echo "Now on the repository master branch; all modifications are staged..."
+	@git add -u
+	@git status
 
 # ---
 
