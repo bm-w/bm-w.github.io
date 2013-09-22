@@ -1,0 +1,1 @@
+var n;n=angular.module("bmw",[]),n.run(["$log",function(n){return n.debug("Running...")}]);
