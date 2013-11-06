@@ -53,7 +53,7 @@ release: build
 $(DIR)/:
 	mkdir -p $(DIR)
 
-$(PUB_DIR)/: $(DIR)
+$(PUB_DIR)/: | $(DIR)
 	mkdir -p $(PUB_DIR)/lib
 	curl -s http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css -o $(PUB_DIR)/lib/reset.css
 	curl -s http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js -o $(PUB_DIR)/lib/angular.js
@@ -61,16 +61,16 @@ $(PUB_DIR)/: $(DIR)
 
 # ---
 
-$(DIR)/index.html: $(SRC_DIR)/index.jade $(BUILD_BINS) $(DIR)
+$(DIR)/index.html: $(SRC_DIR)/index.jade $(BUILD_BINS) | $(DIR)
 	$(JADE_BIN) < $(SRC_DIR)/index.jade > $(DIR)/index.html
 
-$(PUB_DIR)/bm-w.css: $(SRC_DIR)/base.styl $(BUILD_BINS) $(PUB_DIR)
+$(PUB_DIR)/bm-w.css: $(SRC_DIR)/base.styl $(BUILD_BINS) | $(PUB_DIR)
 	$(STYLUS_BIN) < $(SRC_DIR)/base.styl > $(PUB_DIR)/bm-w.css
 
 NG_SCRIPTS := \
 	$(SRC_DIR)/controllers.coffee \
 	$(SRC_DIR)/directives.coffee
-$(PUB_DIR)/bm-w.js: $(NG_SCRIPTS) $(BUILD_BINS) $(PUB_DIR)
+$(PUB_DIR)/bm-w.js: $(NG_SCRIPTS) $(BUILD_BINS) | $(PUB_DIR)
 	$(COFFEE_BIN) -cbj /dev/null -p $(NG_SCRIPTS) | $(UGLIFY_BIN) - -m toplevel=true -c > $(PUB_DIR)/bm-w.js
 
 .ASSETS:
