@@ -3,11 +3,31 @@ html(lang="en")
 	head
 		meta(charset="utf-8")
 		title Hello | Bastiaan Marinus van de Weerd
-		link(rel="stylesheet", href="/public/bm-w.css")
+		link(rel="stylesheet",href="/public/bm-w.css")
+		meta(name="viewport",content="width=device-width,initial-scale=1")
 	body(ng-app="bmw")
+		#header(bmw-header)
+			h1 BM&middot;W
 		#wrapper
-			h1 Under construction&hellip;
-			p
-			| Will be online <em>real soon</em>. Patience is a great virtue!
-		script(src="/public/lib/angular.js")
+			#content
+				.headshot(ng-init="foo = '…'; datum = null; default = ['Please, feel free', 'to contact me!']", mouseout="datum = null;")
+					img(src="/public/avatar.png")
+					p.icons
+						a.github(href="https://github.com/bm-w", ng-mouseover="datum = [\"I'm on GitHub:\", \"bm-w\"];")
+						a.twitter(href="https://twitter.com/bmdashw", ng-mouseover="datum = [\"I'm on Twitter:\", \"@bmdashw\"];")
+						a.email(href="javascript:void(0);", ng-mouseover="datum = [\"Email me:\", \"…\"];")
+					p {{(datum || default)[0]}}<br />{{(datum || default)[1]}}
+				p Hello!<br /><br />My name is<br />
+					strong Bastiaan Marinus
+					<br />van de Weerd.<br />
+				p I am an iOS and backend developer based in Santiago in Chile, originally from Amsterdam in the Netherlands.
+				p My formal education was in civil engineering, specializing in structural design, at the Delft University of Technology.
+				p Check me out on GitHub: 
+					a(href="https://github.com/bm-w") bm-w
+		script.
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+		script(src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js")
+		script(src="/public/lib/d3.js")
+		// script(src="/public/lib/angular.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js")
 		script(src="/public/bm-w.js")

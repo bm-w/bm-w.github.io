@@ -24,7 +24,7 @@ ifeq ($(MODE), release)
 DIR := $(TOP_DIR)
 endif
 
-.PHONY: install build foo clean clean-build %.release
+.PHONY: install build foo clean clean-build %.release .ASSETS
 
 # ---
 
@@ -33,6 +33,7 @@ install:
 	@npm install
 
 build: \
+	.ASSETS \
 	$(PUB_DIR)/bm-w.js \
 	$(PUB_DIR)/bm-w.css \
 	$(DIR)/index.html
@@ -55,7 +56,8 @@ $(DIR)/:
 $(PUB_DIR)/: $(DIR)
 	mkdir -p $(PUB_DIR)/lib
 	curl -s http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css -o $(PUB_DIR)/lib/reset.css
-	curl -s http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js  -o $(PUB_DIR)/lib/angular.js
+	curl -s http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js -o $(PUB_DIR)/lib/angular.js
+	curl -s http://d3js.org/d3.v3.min.js -o $(PUB_DIR)/lib/d3.js
 
 # ---
 
@@ -66,9 +68,13 @@ $(PUB_DIR)/bm-w.css: $(SRC_DIR)/base.styl $(BUILD_BINS) $(PUB_DIR)
 	$(STYLUS_BIN) < $(SRC_DIR)/base.styl > $(PUB_DIR)/bm-w.css
 
 NG_SCRIPTS := \
-	$(SRC_DIR)/controllers.coffee
+	$(SRC_DIR)/controllers.coffee \
+	$(SRC_DIR)/directives.coffee
 $(PUB_DIR)/bm-w.js: $(NG_SCRIPTS) $(BUILD_BINS) $(PUB_DIR)
 	$(COFFEE_BIN) -cbj /dev/null -p $(NG_SCRIPTS) | $(UGLIFY_BIN) - -m toplevel=true -c > $(PUB_DIR)/bm-w.js
+
+.ASSETS:
+	cp $(TOP_DIR)/assets/* $(PUB_DIR)/
 
 # ---
 

@@ -1,7 +1,154 @@
 @import "lib/reset.css"
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,300italic|PT+Serif")
 
-body
-	font 16px "Helvetica Neue", Helvetica, sans-serif
+mid-width = 704px
+main-color = rgba(0,0,0,0.6)
 
-h1
-	font-size 125%
+
+p, h1, h2, h3, h4, h5, h6
+	font-size 16px
+	font-weight 400
+	font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+	letter-spacing 0.75px
+	line-height 1.4 
+	text-align justify
+	hyphens auto
+	-ms-hyphens auto
+	-moz-hyphens auto
+	-webkit-hyphens auto
+
+h1, h2, h3, h4, h5, h6
+	font-weight 700
+	font-family "PT Serif", serif
+	span.middlefix
+		position relative
+		bottom 1px
+		padding-right 4px
+		font-size 80%
+
+p
+	padding 0 10px
+	margin-bottom 16px
+
+em
+	font-style italic
+
+strong
+	font-weight 700
+
+hr
+	border none
+	height 1px
+	background-color main-color
+
+#header
+	box-sizing border-box
+	-moz-box-sizing border-box
+	position relative
+	margin 160px auto 0 auto
+	padding 4px 8px
+	width 320px
+	background-color rgba(112,0,0,0.6)
+	h1
+		text-align center
+		font-size 24px
+		color white
+	svg
+		position absolute
+		top -160px
+		left -160px
+		width 640px
+		height 480px
+		z-index -1
+		g.datum
+			line
+				opacity 0.25
+				stroke black
+				&.shadow
+					opacity 0.05
+					stroke-width 12
+			.right line
+				&.core
+					stroke red
+				&.shadow
+					stroke #700000
+					stroke-width 16
+					opacity 0.025
+				&.hidden-shadow
+					stroke white
+					stroke-width 18
+			.left line
+				&.core
+					stroke white
+					opacity 1.0
+				&.shadow
+					stroke #000070
+		circle
+			fill black
+
+#wrapper
+	box-sizing border-box
+	margin 0 auto
+	width 320px
+	pointer-events none
+
+#content
+	background-color rgba(255,255,255,0.6)
+	pointer-events auto
+	.headshot
+		float right
+		margin-left 10px
+		padding-top 12px
+		width 120px
+		background-color rgba(112,0,0,0.1)
+		clear both
+		& > img
+			display block
+			width 100%
+		p
+			margin 0
+			padding 4px 4px 2px 4px
+			background-color rgba(112,0,0,0.55)
+			color white
+			text-align center
+			font-size 12px
+			font-family "PT Serif", serif
+			letter-spacing 0
+			hyphens none
+			-ms-hyphens none
+			-moz-hyphens none
+			-webkit-hyphens none
+			&.icons > a
+				display inline-block
+				margin-left 7px
+				border none
+				width 32px
+				height 24px
+				background-size 100% 200%
+				cursor pointer
+				&:hover
+					background-position 0 100%
+				&:first-child
+					margin 0
+				&.github
+					background-image url(github.png)
+				&.twitter
+					background-image url(twitter.png)
+				&.email
+					background-image url(email.png)
+	.headshot + p
+		padding-top 24px
+	p a
+		color rgba(112,0,0,0.8)
+		text-decoration none
+		&:hover
+			color black
+			text-decoration underline
+
+@media screen and (max-width: 320px)
+	#header
+		margin-top 64px
+		svg
+			left 0
+			top -64px
+			width 320px

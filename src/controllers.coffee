@@ -1,5 +1,8 @@
-app = angular.module 'bmw', []
+controllers = angular.module 'bmw', ['bmwDirectives']
 
-app.run ['$log', ($log) ->
+controllers.run ['$log', ($log) ->
 	$log.debug "Running..."
+
+	(Hammer window).on 'pinch', (event) ->
+		console.log "Pinch event:", event
 ]
