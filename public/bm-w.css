@@ -1,8 +1,189 @@
 @import "lib/reset.css";
-body {
-  font: 16px "Helvetica Neue", Helvetica, sans-serif;
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,300italic|PT+Serif");
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.75px;
+  line-height: 1.4;
+  text-align: justify;
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
 }
-h1 {
-  font-size: 125%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: "PT Serif", serif;
+}
+h1 span.middlefix,
+h2 span.middlefix,
+h3 span.middlefix,
+h4 span.middlefix,
+h5 span.middlefix,
+h6 span.middlefix {
+  position: relative;
+  bottom: 1px;
+  padding-right: 4px;
+  font-size: 80%;
+}
+p {
+  padding: 0 10px;
+  margin-bottom: 16px;
+}
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: 700;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0,0,0,0.6);
+}
+#header {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  margin: 160px auto 0 auto;
+  padding: 4px 8px;
+  width: 320px;
+  background-color: rgba(112,0,0,0.6);
+}
+#header h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+}
+#header svg {
+  position: absolute;
+  top: -160px;
+  left: -160px;
+  width: 640px;
+  height: 480px;
+  z-index: -1;
+}
+#header svg g.datum line {
+  opacity: 0.25;
+  stroke: #000;
+}
+#header svg g.datum line.shadow {
+  opacity: 0.05;
+  stroke-width: 12;
+}
+#header svg g.datum .right line.core {
+  stroke: #f00;
+}
+#header svg g.datum .right line.shadow {
+  stroke: #700000;
+  stroke-width: 16;
+  opacity: 0.025;
+}
+#header svg g.datum .right line.hidden-shadow {
+  stroke: #fff;
+  stroke-width: 18;
+}
+#header svg g.datum .left line.core {
+  stroke: #fff;
+  opacity: 1;
+}
+#header svg g.datum .left line.shadow {
+  stroke: #000070;
+}
+#header svg circle {
+  fill: #000;
+}
+#wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 320px;
+  pointer-events: none;
+}
+#content {
+  background-color: rgba(255,255,255,0.6);
+  pointer-events: auto;
+}
+#content .headshot {
+  float: right;
+  margin-left: 10px;
+  padding-top: 12px;
+  width: 120px;
+  background-color: rgba(112,0,0,0.1);
+  clear: both;
+}
+#content .headshot > img {
+  display: block;
+  width: 100%;
+}
+#content .headshot p {
+  margin: 0;
+  padding: 4px 4px 2px 4px;
+  background-color: rgba(112,0,0,0.55);
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-family: "PT Serif", serif;
+  letter-spacing: 0;
+  hyphens: none;
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+}
+#content .headshot p.icons > a {
+  display: inline-block;
+  margin-left: 7px;
+  border: none;
+  width: 32px;
+  height: 24px;
+  background-size: 100% 200%;
+  cursor: pointer;
+}
+#content .headshot p.icons > a:hover {
+  background-position: 0 100%;
+}
+#content .headshot p.icons > a:first-child {
+  margin: 0;
+}
+#content .headshot p.icons > a.github {
+  background-image: url("github.png");
+}
+#content .headshot p.icons > a.twitter {
+  background-image: url("twitter.png");
+}
+#content .headshot p.icons > a.email {
+  background-image: url("email.png");
+}
+#content .headshot + p {
+  padding-top: 24px;
+}
+#content p a {
+  color: rgba(112,0,0,0.8);
+  text-decoration: none;
+}
+#content p a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+@media screen and (max-width: 320px) {
+  #header {
+    margin-top: 64px;
+  }
+  #header svg {
+    left: 0;
+    top: -64px;
+    width: 320px;
+  }
 }
 
