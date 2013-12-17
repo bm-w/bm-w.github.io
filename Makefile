@@ -16,7 +16,7 @@ BUILD_BINS := $(JADE_BIN) $(STYLUS_BIN) $(COFFEE_BIN) $(UGLIFY_BIN)
 PORT ?= 8000
 
 DIR := $(BLD_DIR)
-PUB_DIR = $(DIR)/public
+AST_DIR = $(DIR)/assets
 
 mode ?= development
 MODE ?= $(mode)
@@ -33,48 +33,48 @@ install:
 	@npm install
 
 build: \
-	.ASSETS \
-	$(PUB_DIR)/bm-w.js \
-	$(PUB_DIR)/bm-w.css \
-	$(DIR)/index.html
+	$(AST_DIR)/bm-w.js \
+	$(AST_DIR)/bm-w.css \
+	$(DIR)/index.html \
+	.ASSETS
 
-run:
+run: 
 	@$(HTTP_BIN) $(DIR)/ -p $(PORT)
 
-release: build
-	rm -rf $(TOP_DIR)/index.html $(TOP_DIR)/public
-	git checkout master
-	cp -r $(BLD_DIR)/* $(TOP_DIR)/ && rm -r $(BLD_DIR)
-	@git add -u
-	@git status
+# release: build
+# 	rm -rf $(TOP_DIR)/index.html $(TOP_DIR)/assets
+# 	git checkout master
+# 	cp -r $(BLD_DIR)/* $(TOP_DIR)/ && rm -r $(BLD_DIR)
+# 	@git add -u
+# 	@git status
 
 # ---
 
 $(DIR)/:
 	mkdir -p $(DIR)
 
-$(PUB_DIR)/: | $(DIR)
-	mkdir -p $(PUB_DIR)/lib
-	curl -s http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css -o $(PUB_DIR)/lib/reset.css
-	curl -s http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js -o $(PUB_DIR)/lib/angular.js
-	curl -s http://d3js.org/d3.v3.min.js -o $(PUB_DIR)/lib/d3.js
+$(AST_DIR)/: | $(DIR)
+	mkdir -p $(AST_DIR)/lib
+	curl -s http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css -o $(AST_DIR)/lib/reset.css
+	curl -s http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js -o $(AST_DIR)/lib/angular.js
+	curl -s http://d3js.org/d3.v3.min.js -o $(AST_DIR)/lib/d3.js
 
 # ---
 
 $(DIR)/index.html: $(SRC_DIR)/index.jade $(BUILD_BINS) | $(DIR)
 	$(JADE_BIN) < $(SRC_DIR)/index.jade > $(DIR)/index.html
 
-$(PUB_DIR)/bm-w.css: $(SRC_DIR)/base.styl $(BUILD_BINS) | $(PUB_DIR)
-	$(STYLUS_BIN) < $(SRC_DIR)/base.styl > $(PUB_DIR)/bm-w.css
+$(AST_DIR)/bm-w.css: $(SRC_DIR)/base.styl $(BUILD_BINS) | $(AST_DIR)
+	$(STYLUS_BIN) < $(SRC_DIR)/base.styl > $(AST_DIR)/bm-w.css
 
 NG_SCRIPTS := \
 	$(SRC_DIR)/controllers.coffee \
 	$(SRC_DIR)/directives.coffee
-$(PUB_DIR)/bm-w.js: $(NG_SCRIPTS) $(BUILD_BINS) | $(PUB_DIR)
-	$(COFFEE_BIN) -cbj /dev/null -p $(NG_SCRIPTS) | $(UGLIFY_BIN) - -m toplevel=true -c > $(PUB_DIR)/bm-w.js
+$(AST_DIR)/bm-w.js: $(NG_SCRIPTS) $(BUILD_BINS) | $(AST_DIR)
+	$(COFFEE_BIN) -cbj /dev/null -p $(NG_SCRIPTS) | $(UGLIFY_BIN) - -m toplevel=true -c > $(AST_DIR)/bm-w.js
 
 .ASSETS:
-	cp $(TOP_DIR)/assets/* $(PUB_DIR)/
+	cp $(TOP_DIR)/assets/* $(AST_DIR)/
 
 # ---
 
