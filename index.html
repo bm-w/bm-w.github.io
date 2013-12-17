@@ -1,1 +1,111 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Hello | Bastiaan Marinus van de Weerd</title><link rel="stylesheet" href="/public/bm-w.css"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body ng-app="bmw"><div id="header" bmw-header><h1>BM&middot;W</h1></div><div id="wrapper"><div id="content"><div ng-init="foo = '…'; datum = null; default = ['Please, feel free', 'to contact me!']" mouseout="datum = null;" class="headshot"><img src="/public/avatar.png"><p class="icons"><a href="https://github.com/bm-w" ng-mouseover="datum = [&quot;I'm on GitHub:&quot;, &quot;bm-w&quot;];" class="github"></a><a href="https://twitter.com/bmdashw" ng-mouseover="datum = [&quot;I'm on Twitter:&quot;, &quot;@bmdashw&quot;];" class="twitter"></a><a href="javascript:void(0);" ng-mouseover="datum = [&quot;Email me:&quot;, &quot;…&quot;];" class="email"></a></p><p>{{(datum || default)[0]}}<br />{{(datum || default)[1]}}</p></div><p>Hello!<br /><br />My name is<br /><strong>Bastiaan Marinus</strong><br />van de Weerd.<br /></p><p>I am an iOS and backend developer based in Santiago in Chile, originally from Amsterdam in the Netherlands.</p><p>My formal education was in civil engineering, specializing in structural design, at the Delft University of Technology.</p><p>Check me out on GitHub: <a href="https://github.com/bm-w">bm-w</a></p></div></div><!-- script.--><!-- 	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')--><!-- script(src="/public/lib//hammer.js")--><script src="/public/lib/d3.js"></script><script src="/public/lib/angular.js"></script><script src="/public/bm-w.js"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Hello | Bastiaan Marinus van de Weerd</title><link rel="stylesheet" href="/assets/bm-w.css"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body ng-app="bmw"><div id="header" bmw-header><h1>BM&middot;W</h1></div><div id="wrapper"><div id="content"><div ng-init="foo = '…'; datum = null; default = ['Please, feel free', 'to contact me!']" mouseout="datum = null;" class="headshot"><img src="/assets/avatar.png"><p class="icons"><a href="https://github.com/bm-w" ng-mouseover="datum = [&quot;I'm on GitHub:&quot;, &quot;bm-w&quot;];" class="github"></a><a href="https://twitter.com/bmdashw" ng-mouseover="datum = [&quot;I'm on Twitter:&quot;, &quot;@bmdashw&quot;];" class="twitter"></a><a href="javascript:void(0);" ng-mouseover="datum = [&quot;Email me:&quot;, &quot;…&quot;];" class="email"></a></p><p>{{(datum || default)[0]}}<br />{{(datum || default)[1]}}</p></div><p>Hello!<br /><br />My name is<br /><strong>Bastiaan Marinus</strong><br />van de Weerd.<br /></p><p>I am an iOS and backend developer based in Santiago in Chile, originally from Amsterdam in the Netherlands.</p><p>My formal education was in civil engineering, specializing in structural design, at the Delft University of Technology. My professional career, however, has been in software development.</p><p>Check me out <a href="https://github.com/bm-w">on GitHub (bm-w), </a>or have a look at this selection of my experience, and the technologies I've worked with:</p><div id="experience"><p><strong>Name</strong>: Teamscope iOS app<br/>
+<strong>URL</strong>: <a href="http://teamscope.co">http://teamscope.co</a><br/>
+<strong>Employer</strong>: Teamscope (as CTO)<br/>
+<strong>Date</strong>: 2013 – <em>(currently under construction)</em><br/>
+<strong>Description</strong>: The iOS client application of Teamscope, a startup building data collection tools for medical researchers and professionals.<br/>
+<strong>Involvement (M)</strong>: Main developer: architecture (Cocoa Touch), visualisation and mapping (Core Animation &amp; MapBox), and documentation.<br/>
+<strong>Tags</strong>: ios, objective-c, cocoa-touch, core-animation, mapbox</p>
+<p><strong>Name</strong>: Teamscope web app<br/>
+<strong>URL</strong>: <a href="http://teamscope.co">http://teamscope.co</a><br/>
+<strong>Employer</strong>: Teamscope (as CTO)<br/>
+<strong>Date</strong>: 2013 – <em>(currently under construction)</em><br/>
+<strong>Description</strong>: The web client application of Teamscope, a startup building data collection tools for medical researchers and professionals.<br/>
+<strong>Involvement (M)</strong>: Main developer: application (AngularJS), visualisation and mapping (D3.js &amp; Leaflet), and documentation.<br/>
+<strong>Tags</strong>: web, node, html5, angularjs, d3, leaflet</p>
+<p><strong>Name</strong>: Teamscope server<br/>
+<strong>URL</strong>: <a href="http://teamscope.co">http://teamscope.co</a><br/>
+<strong>Employer</strong>: Teamscope (as CTO)<br/>
+<strong>Date</strong>: 2013 – <em>(currently under construction)</em><br/>
+<strong>Description</strong>: A <em>ReST</em>-style API server, serving as backend for the iOS and web client applications of Teamscope, a startup building data collection tools for medical researchers and professionals.<br/>
+<strong>Involvement (L)</strong>: Main developer: architecture (AWS/EC2/DynamoDB), <em>ReST</em>-style API server (Node.js/Restify), and documentation.<br/>
+<strong>Tags</strong>: web, aws, ec2, dynamodb, redis, node, async, restify, rest</p>
+<p><strong>Name</strong>: Teamscope MVP<br/>
+<strong>URL</strong>: <a href="http://teamscope.co">http://teamscope.co</a><br/>
+<strong>Employer</strong>: Teamscope (as CTO)<br/>
+<strong>Date</strong>: 2013<br/>
+<strong>Description</strong>: The <em>minimum viable product</em> implementation of a mobile-focused web application of Teamscope, a startup building data collection tools for medical researchers and professionals.<br/>
+<strong>Involvement (S)</strong>: Maintainer (taking over from previous developer): web app (PHP/CodeIgniter &amp; MySQL, HTML/jQuery).<br/>
+<strong>Tags</strong>: web, aws, ec2, mysql, php, codeigniter, jquery</p>
+<p><strong>Name</strong>: Omgevingswijzer<br/>
+<strong>URL</strong>: <a href="https://omgevingswijzer.org">https://omgevingswijzer.org</a><br/>
+<strong>Client</strong>: Rijkswaterstaat<br/>
+<strong>Collaborators</strong>: Arup<br/>
+<strong>Date</strong>: 2011 – <em>(ongoing)</em><br/>
+<strong>Description</strong>: A web-based tool for assessing the sustainability impact of built-environment projects in their early-ideas stage.<br/>
+<strong>Involvement (L)</strong>: Main developer: architecture (AWS/EC2), backend (Python/Django), frontend (HTML5/AngularJS/jQuery), visualizations (D3.js/Flash fallback), and documentation.<br/>
+<strong>Tags</strong>: web, aws, ec2, python, django, html5, javascript, angular, d3, jquery, flash</p>
+<p><strong>Name</strong>: Signer<br/>
+<strong>URL</strong>: <a href="https://github.com/bm-w/signer">https://github.com/bm-w/signer</a><br/>
+<strong>Date</strong>: 2013<br/>
+<strong>Description</strong>: A small tool for quickly computing digital signatures for use in correspondence and invoicing (using RSA private key, OpenSSL, and HMAC-SHA256).<br/>
+<strong>Involvement (S)</strong>: Developer: script (Node.js/OpenSSL), integration (OS X Keychain, Alfred 2 App), documentation.<br/>
+<strong>Tags</strong>: script, node, openssl, cryptography, alfred</p>
+<p><strong>Name</strong>: Arup internal project F<br/>
+<strong>URL</strong>: <em>(private)</em><br/>
+<strong>Employer</strong>: Arup<br/>
+<strong>Date</strong>: 2013<br/>
+<strong>Description</strong>: A web-based office-map tool for managing flexible work space reservations.<br/>
+<strong>Involvement (M)</strong>: Main developer: architecture (AWS/EC2), backend (Python/Django/Tastypie), frontend (HTML5/AngularJS), mapping &amp; visualization (MapBox/Leaflet/D3), and documentation.<br/>
+<strong>Tags</strong>: web, aws, ec2, python, django, tastypie, html5, javascript, angular, d3, leaflet, mapbox</p>
+<p><strong>Name</strong>: Arup internal project D<br/>
+<strong>URL</strong>: <em>(private)</em><br/>
+<strong>Employer</strong>: Arup<br/>
+<strong>Date</strong>: 2012 – 2013<br/>
+<strong>Description</strong>: An iPad tool for construction-site data collection, such as notes, survey data, and photos and images.<br/>
+<strong>Involvement (L)</strong>: Development team member: architecture (Core Data), visualizations (Core Animation), mapping (MapBox), and documentation.<br/>
+<strong>Tags</strong>: ios, ipad, objective-c, cocoa, core-data, core-animation, mapbox</p>
+<p><strong>Name</strong>: Arup internal project C<br/>
+<strong>URL</strong>: <em>(private)</em><br/>
+<strong>Employer</strong>: Arup<br/>
+<strong>Date</strong>: 2011 – 2013<br/>
+<strong>Description</strong>: A web-based tool for collection, communication, and publication of built-environment project information and data.<br/>
+<strong>Involvement (L)</strong>: Main developer: architecture (AWS/EC2), backend (Python/Django/Tastypie), frontend (HTML5/AngularJS), visualizations (D3.js), mapping (MapBox/Leaflet), and documentation.<br/>
+<strong>Tags</strong>: web, aws, ec2, python, django, tastypie, html5, javascript, angular, d3, leaflet, mapbox, engineering</p>
+<p><strong>Name</strong>: Arup internal project G<br/>
+<strong>URL</strong>: <em>(private)</em><br/>
+<strong>Employer</strong>: Arup<br/>
+<strong>Date</strong>: 2013<br/>
+<strong>Description</strong>: A web-based tool for proposal, selection, and budget allocation of internal research and development efforts.<br/>
+<strong>Involvement (M)</strong>: Development team member: backend (ColdFusion), frontend (HTML/jQuery).<br/>
+<strong>Tags</strong>: web, coldfusion, html, javascript, jquery</p>
+<p><strong>Name</strong>: StructuralComponents 3.0 server<br/>
+<strong>URL</strong>: <a href="https://db.tt/aq9xSElg">https://db.tt/aq9xSElg</a> [PDF]<br/>
+<strong>Collaborator</strong>: Arup<br/>
+<strong>Date</strong>: 2012 – 2013<br/>
+<strong>Description</strong>: Part of my MSc thesis <em>&#8216;StructuralComponents, a client-server software architecture for FEM-based structural design exploration&#8217;</em>. The server application for a structural engineering tool allowing an engineer to explore the solution space of an early-stage high-rise building project. The server implements a combination of <em>parametric-associative</em> modelling and <em>finite-element</em>-method analysis, accessed through a <em>ReST</em>-style API.<br/>
+<strong>Involvement (L)</strong>: Main researcher and developer (all C/Objective-C/Cococa on S X): <em>ReST</em>-style API server, parametric-associative modelling engine (libdispatch/GCD), and finite-element analysis engine (numerical computation in C).<br/>
+<strong>Tags</strong>: os-x, c, objective-c, cocoa, web, rest, pad, fem, cholesky</p>
+<p><strong>Name</strong>: StructuralComponents 3.0 clients<br/>
+<strong>URL</strong>: <a href="https://db.tt/aq9xSElg">https://db.tt/aq9xSElg</a> [PDF]<br/>
+<strong>Collaborator</strong>: Arup<br/>
+<strong>Date</strong>: 2012 – 2013<br/>
+<strong>Description</strong>: Part of my MSc thesis <em>&#8216;StructuralComponents, a client-server software architecture for FEM-based structural design exploration&#8217;</em>. iOS and web client applications for a structural engineering tool allowing an engineer to explore the solution space of an early-stage high-rise building project. The clients implement the modelling UI, and data and model visualization and exploration.<br/>
+<strong>Involvement (L)</strong>: Main researcher and developer: iOS client (Objective-C/Cocoa Touch/Core Data/Core Animation), web client (HTML5/AngularJS/D3.js).<br/>
+<strong>Tags</strong>: ios, c, cocoa-touch, core-animation, core-data, web, html5, angular</p>
+<p><strong>Name</strong>: Rilden<br/>
+<strong>URL</strong>: <em>(deprecated)</em><br/>
+<strong>Date</strong>: 2012<br/>
+<strong>Description</strong>: An interactive combat logger and <em>cover flow</em>-style character sheet for iOS of my <em>D&amp;D</em> character, Rilden Tealry.<br/>
+<strong>Involvement (M)</strong>: Main developer: application (HTML5/AngularJS), visualizations (D3.js/SVG/CSS3).<br/>
+<strong>Tags</strong>: ios, html5, angular, d3, svg</p>
+<p><strong>Name</strong>: Arup internal project E<br/>
+<strong>URL</strong>: <em>(private)</em><br/>
+<strong>Employer</strong>: Arup<br/>
+<strong>Date</strong>: 2011 – 2012<br/>
+<strong>Description</strong>: An AWS-based computation cluster and control application for raytracing daylight and glare computation.<br/>
+<strong>Involvement (M)</strong>: Main developer: architecture (AWS/EC2), backend (Python/Django/Celery &amp; AMQP), frontend (HTML5), computation (Radiance &amp; Python/Numpy/Scipy), and documentation.<br/>
+<strong>Tags</strong>: web, aws, ec2, python, django, tastypie, celery, amqp, rabbbitmq, numpy, scipy, html5, javascript</p>
+<p><strong>Name</strong>: Arup internal project B<br/>
+<strong>URL</strong>: <em>(private)</em><br/>
+<strong>Employer</strong>: Arup<br/>
+<strong>Date</strong>: 2010 – 2012<br/>
+<strong>Description</strong>: A collection of <em>WordPress</em>-based project blogs, with business systems integration through plugins.<br/>
+<strong>Involvement (S)</strong>: Maintainer, developer: (PHP/WordPress &amp; HTML/jQuery).<br/>
+<strong>Tags</strong>: web, php, wordpress, javascript, jquery</p>
+<p><strong>Name</strong>: Arup internal project A<br/>
+<strong>URL</strong>: <em>(private)</em><br/>
+<strong>Employer</strong>: Arup<br/>
+<strong>Date</strong>: 2010 – 2011<br/>
+<strong>Description</strong>: A collection of <em>Rhino 3D</em> plugins for rationalization and tesselation for <em>finite-element method</em> computation of complex building geometry.<br/>
+<strong>Involvement (M)</strong>: Development team member: plugins (.NET), structural engineer: research, <em>FEM</em> analysis.<br/>
+<strong>Tags</strong>: net, fem, engineering</p></div></div></div><!-- script.--><!-- 	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')--><!-- script(src="/assets/lib//hammer.js")--><script src="/assets/lib/d3.js"></script><script src="/assets/lib/angular.js"></script><script src="/assets/bm-w.js"></script></body></html>
